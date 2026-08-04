@@ -117,7 +117,7 @@ production-line-simulation/
 ---
 
 ## ⚙️ Configuración de línea (ejemplo YAML)
-```
+```yaml
 stations:
   - id: S01
     name: "Llenadora"
@@ -127,7 +127,7 @@ stations:
     mttr_min: 8               # tiempo medio reparación
     quality_rate: 0.998       # 99.8% conformes
   # ... agregar más estaciones
-  ```
+```
 
   ---
 
@@ -141,5 +141,4 @@ stations:
 
 ---
 
-*Proyecto desarrollado como parte del portafolio profesional en análisis de datos industriales.*
-
+*Proyecto desarrollado como parte del portafolio profesional en simulación de procesos industriales.*
