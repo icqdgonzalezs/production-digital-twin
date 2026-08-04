@@ -73,8 +73,8 @@ Simulador de eventos discretos para líneas de envasado de alimentos sólidos. C
 
 ```bash
 # Clonar repositorio
-git clone https://github.com/icqdgonzalezs/production-line-simulator.git
-cd production-line-simulator
+git clone https://github.com/icqdgonzalezs/production-line-simulation.git
+cd production-line-simulation
 
 # Crear entorno virtual
 python3 -m venv venv
