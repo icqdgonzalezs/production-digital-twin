@@ -117,6 +117,7 @@ production-line-simulation/
 ---
 
 ## ⚙️ Configuración de línea (ejemplo YAML)
+
 ```yaml
 stations:
   - id: S01
