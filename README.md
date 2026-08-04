@@ -1,124 +1,131 @@
-# 🏭 Simulación de Línea de Envasado — Snacks & Cereales
+# 🏭 Production Line Simulator
 
-Proyecto de simulación, balance y análisis de OEE para líneas de envasado de
-alimentos sólidos. Motor de simulación de eventos discretos con análisis Monte
-Carlo y dashboard interactivo.
+[![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![SimPy](https://img.shields.io/badge/SimPy-4.1-red?logo=python)](https://simpy.readthedocs.io/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.26.0-red?logo=streamlit)](https://streamlit.io/)  <!-- solo si añades Streamlit -->
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-## Stack tecnológico
+Simulador de eventos discretos para líneas de envasado de alimentos sólidos. Calcula **OEE** (ISO 22400), detecta **cuellos de botella**, aplica **Monte Carlo** y genera dashboards interactivos en HTML/PNG/Excel.
 
-| Módulo | Librería | Propósito |
-|--------|----------|-----------|
-| Simulación | `simpy 4.1` | Eventos discretos (fallas, buffers, flujo) |
-| Análisis numérico | `numpy`, `scipy` | Estadística, optimización |
-| Datos | `pandas` | Tablas de resultados |
-| Dashboard | `plotly` | HTML interactivo |
-| Gráficos | `matplotlib` | Figuras estáticas / PDF |
-| Reportes | `openpyxl` | Excel multi-hoja |
-| Config | `pyyaml` | Parámetros sin tocar código |
-| CLI | `rich` | Output en consola profesional |
-| Tests | `pytest` | 20+ tests unitarios |
+---
 
-## Instalación (VS Code)
+## 📌 Descripción general
+
+- **Simulación realista** de líneas de producción con fallas (MTBF/MTTR), buffers finitos y variabilidad.
+- **Análisis de OEE** (Disponibilidad × Rendimiento × Calidad) con intervalos de confianza Monte Carlo.
+- **Detección de cuellos de botella** por utilización, rendimiento y puntuación compuesta.
+- **Índices Cp/Cpk** para evaluar capacidad de proceso.
+- **Salidas profesionales**: dashboard HTML interactivo, resumen en PNG, Excel multihoja.
+
+---
+
+## ✨ Características principales
+
+- **Motor de simulación discreta** con `SimPy`.
+- **Configuración flexible** mediante archivo YAML (sin tocar código).
+- **Análisis Monte Carlo** con semillas deterministas.
+- **Dashboard Plotly** interactivo (OEE, violines, mapa de calor, balance de tiempos).
+- **Reportes automáticos** en PNG y Excel.
+- **CLI profesional** con `rich` para consola.
+- **Más de 20 pruebas unitarias** con `pytest`.
+
+---
+
+## 📈 KPIs y métricas
+
+| Métrica | Descripción |
+|---------|-------------|
+| **OEE** | Disponibilidad (A) × Rendimiento (P) × Calidad (Q) según ISO 22400 |
+| **Cuello de botella** | Estación con mayor utilización / menor rendimiento |
+| **Cp / Cpk** | Capacidad de proceso de tiempos de ciclo |
+| **MTBF / MTTR** | Tiempo medio entre fallas y reparación |
+| **Producción por réplica** | Unidades producidas en cada ejecución Monte Carlo |
+
+---
+
+## 🛠️ Stack tecnológico
+
+| Herramienta | Uso |
+|-------------|-----|
+| **Python 3.9+** | Lenguaje base |
+| **SimPy 4.1** | Motor de simulación de eventos discretos |
+| **NumPy / SciPy** | Cálculos numéricos y estadística |
+| **Pandas** | Análisis de resultados |
+| **Plotly** | Dashboard HTML interactivo |
+| **Matplotlib** | Figuras estáticas (PNG) |
+| **OpenPyXL** | Reportes Excel multihoja |
+| **PyYAML** | Configuración de líneas |
+| **Rich** | Salida de consola mejorada |
+| **Pytest** | Pruebas unitarias |
+
+---
+
+## 📸 Capturas del panel
+
+**Dashboard interactivo (HTML)**
+![Dashboard OEE](capturas/dashboard_preview.png)
+
+**Resumen ejecutivo (PNG)**
+![Summary PNG](capturas/summary_preview.png)
+
+---
+
+## ⚙️ Instalación y ejecución rápida
 
 ```bash
-# 1. Crear entorno virtual
-python -m venv .venv
-source .venv/bin/activate          # Linux / Mac
-.venv\Scripts\activate             # Windows
+# Clonar repositorio
+git clone https://github.com/icqdgonzalezs/production-line-simulator.git
+cd production-line-simulator
 
-# 2. Instalar dependencias
+# Crear entorno virtual
+python3 -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+
+# Instalar dependencias
 pip install -r requirements.txt
 
-# 3. Correr la simulación
+# Ejecutar simulación (con dashboard HTML)
 python main.py
 
-# 4. Opciones avanzadas
-python main.py --replications 50           # más réplicas Monte Carlo
-python main.py --config config/mi_linea.yaml  # otra configuración
-python main.py --no-dashboard              # solo consola, sin HTML
-
-# 5. Tests
-pytest tests/ -v --cov=src --cov-report=term-missing
+# Opciones avanzadas
+python main.py --replications 50 --config config/line_config.yaml --no-dashboard
 ```
 
-## Estructura del proyecto
-
+📁 Estructura del proyecto
 ```
-production_line/
+production-line-simulator/
 ├── config/
-│   └── line_config.yaml       # ← CONFIGURA AQUÍ tu línea
-├── data/                      # CSVs de entrada (logs reales)
+│   └── line_config.yaml           # Parámetros de la línea (editable)
+├── data/                          # Datos de entrada (opcional)
 ├── src/
-│   ├── models.py              # Dataclasses: Station, LineMetrics, OEE
-│   ├── simulator.py           # Motor SimPy + Monte Carlo
-│   ├── oee.py                 # OEE: A × P × Q, estadísticas MC
-│   ├── bottleneck.py          # 3 métodos detección CB + Cp/Cpk
-│   ├── reporter.py            # Dashboard Plotly + PNG + Excel
-│   └── config_loader.py       # Carga YAML → dataclasses
+│   ├── simulator.py               # Motor SimPy + Monte Carlo
+│   ├── oee.py                     # Cálculo de OEE y estadísticas
+│   ├── bottleneck.py              # Detección de cuellos de botella y Cp/Cpk
+│   ├── reporter.py                # Dashboard Plotly + PNG + Excel
+│   ├── models.py                  # Dataclasses
+│   └── config_loader.py           # Carga de YAML
 ├── tests/
-│   └── test_simulator.py      # 20+ tests unitarios
-├── reports/                   # Salida automática
-│   ├── dashboard.html         # Dashboard interactivo
-│   ├── summary.png            # Figura resumen
-│   └── analisis_linea.xlsx    # Excel multi-hoja
-├── main.py                    # Orquestador CLI
-└── requirements.txt
+│   └── test_simulator.py          # Pruebas unitarias
+├── reports/                       # Salidas generadas (HTML, PNG, XLSX)
+├── main.py                        # CLI principal
+├── requirements.txt
+├── .gitignore
+└── README.md
 ```
 
-## Configurar tu línea real
-
-Edita `config/line_config.yaml` con los datos reales de tu línea:
-
-```yaml
+⚙️ Configuración de línea (ejemplo YAML)
+```
 stations:
   - id: S01
-    name: "Nombre de la estación"
-    rate_upm: 95.0        # velocidad nominal (unidades/minuto)
-    cycle_time_std: 0.05  # variabilidad del ciclo (fracción, ej: 0.05 = ±5%)
-    mtbf_min: 120         # tiempo medio entre fallas (minutos)
-    mttr_min: 8           # tiempo medio de reparación (minutos)
-    quality_rate: 0.998   # fracción de unidades conformes (0.998 = 99.8%)
-```
+    name: "Llenadora"
+    rate_upm: 95.0            # unidades/minuto
+    cycle_time_std: 0.05      # variabilidad ±5%
+    mtbf_min: 120             # tiempo medio entre fallas
+    mttr_min: 8               # tiempo medio reparación
+    quality_rate: 0.998       # 99.8% conformes
+  # ... agregar más estaciones
+  ```
 
-## Salida del análisis
+  
 
-### Consola (Rich)
-- Tabla OEE por estación (A, P, Q, OEE medio ± σ, percentiles P10/P50/P90)
-- Tabla de frecuencia de cuello de botella (N réplicas MC)
-- Panel resumen ejecutivo
 
-### dashboard.html (Plotly)
-1. OEE descompuesto por estación (barras agrupadas A/P/Q/OEE)
-2. Distribución de throughput por estación (violín Monte Carlo)
-3. Heatmap de pérdidas (semáforo verde/amarillo/rojo)
-4. Frecuencia de detección de cuello de botella
-5. Índices Cp / Cpk con línea de referencia 1.33
-6. Balance de tiempos: Running / Starved / Bloqueado / Falla
-
-### summary.png (Matplotlib)
-4 paneles: OEE waterfall, boxplot Monte Carlo, balance horizontal, ranking CB.
-
-### analisis_linea.xlsx
-- Hoja 1: OEE por estación (media, std, percentiles)
-- Hoja 2: Frecuencia de cuello de botella
-- Hoja 3: Capacidad Cp/Cpk por estación
-- Hoja 4: Producción por réplica
-
-## Próximos módulos (Fase 2)
-
-- `optimizer.py` — Balance de línea con `scipy.optimize` (What-If scenarios)
-- `changeover.py` — Simulación de cambios de formato (SMED analysis)
-- `scheduler.py` — Planificación de mantenimiento preventivo (PM scheduling)
-- `sensitivity.py` — Análisis de sensibilidad por parámetro (tornado chart)
-
-## Conceptos de ingeniería aplicados
-
-| Concepto | Implementación |
-|----------|----------------|
-| OEE (ISO 22400) | `src/oee.py` — Disponibilidad × Rendimiento × Calidad |
-| Cuello de botella | `src/bottleneck.py` — 3 métodos: utilización, throughput, score compuesto |
-| MTBF / MTTR | `src/simulator.py` — distribución exponencial (zona de vida útil) |
-| Índices Cp/Cpk | `src/bottleneck.py` — capacidad de proceso de tiempos de ciclo |
-| Monte Carlo | `src/simulator.py` — N réplicas con semillas deterministas |
-| Buffers finitos | `simpy.Container` — modelado de bloqueo y hambre |
-| Variabilidad | Normal truncada en tiempos de ciclo (±30% del nominal) |
