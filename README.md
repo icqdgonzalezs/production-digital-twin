@@ -94,7 +94,7 @@ python main.py --replications 50 --config config/line_config.yaml --no-dashboard
 
 ## 📁 Estructura del proyecto
 ```
-production-line-simulator/
+production-line-simulation/
 ├── config/
 │   └── line_config.yaml           # Parámetros de la línea (editable)
 ├── data/                          # Datos de entrada (opcional)
