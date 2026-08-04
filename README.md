@@ -92,7 +92,7 @@ python main.py --replications 50 --config config/line_config.yaml --no-dashboard
 
 ---
 
-📁 Estructura del proyecto
+## 📁 Estructura del proyecto
 ```
 production-line-simulator/
 ├── config/
@@ -116,7 +116,7 @@ production-line-simulator/
 
 ---
 
-⚙️ Configuración de línea (ejemplo YAML)
+## ⚙️ Configuración de línea (ejemplo YAML)
 ```
 stations:
   - id: S01
