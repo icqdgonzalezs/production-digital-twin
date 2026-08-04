@@ -132,7 +132,7 @@ stations:
 
   ---
 
-  ## 👤 Autor
+## 👤 Autor
 
 **David González** – Ingeniero Civil Químico | Data Analytics | Mejora Continua  
 
