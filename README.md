@@ -2,7 +2,6 @@
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![SimPy](https://img.shields.io/badge/SimPy-4.1-red?logo=python)](https://simpy.readthedocs.io/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.26.0-red?logo=streamlit)](https://streamlit.io/)  <!-- solo si añades Streamlit -->
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 Simulador de eventos discretos para líneas de envasado de alimentos sólidos. Calcula **OEE** (ISO 22400), detecta **cuellos de botella**, aplica **Monte Carlo** y genera dashboards interactivos en HTML/PNG/Excel.
