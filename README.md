@@ -128,7 +128,7 @@ stations:
     quality_rate: 0.998       # 99.8% conformes
   # ... agregar más estaciones
   ```
-  
+
   ---
 
   ## 👤 Autor
