@@ -91,6 +91,8 @@ python main.py
 python main.py --replications 50 --config config/line_config.yaml --no-dashboard
 ```
 
+---
+
 📁 Estructura del proyecto
 ```
 production-line-simulator/
@@ -113,6 +115,8 @@ production-line-simulator/
 └── README.md
 ```
 
+---
+
 ⚙️ Configuración de línea (ejemplo YAML)
 ```
 stations:
@@ -125,7 +129,18 @@ stations:
     quality_rate: 0.998       # 99.8% conformes
   # ... agregar más estaciones
   ```
-
   
+  ---
 
+  ## 👤 Autor
+
+**David González** – Ingeniero Civil Químico | Data Analytics | Mejora Continua  
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-David_González-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/davidgonzalezsz)
+[![GitHub](https://img.shields.io/badge/GitHub-icqdgonzalezs-181717?style=flat&logo=github&logoColor=white)](https://github.com/icqdgonzalezs)
+[![Email](https://img.shields.io/badge/Email-icq.dgonzalezs%40gmail.com-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:icq.dgonzalezs@gmail.com)
+
+---
+
+*Proyecto desarrollado como parte del portafolio profesional en análisis de datos industriales.*
 
