@@ -1,0 +1,47 @@
+# Línea de envasado de alimentos sólidos
+stations:
+  - id: S01
+    name: "Llenadora"
+    rate_upm: 95.0              # unidades/minuto
+    cycle_time_std: 0.05        # variabilidad (±5%)
+    cycle_time_lsl: 0.57        # límite inferior especificación (min/unidad)
+    cycle_time_usl: 0.69        # límite superior especificación (min/unidad)
+    mtbf_min: 120.0             # tiempo medio entre fallos (min)
+    mttr_min: 8.0               # tiempo medio reparación (min)
+    quality_rate: 0.998         # 99.8% unidades buenas
+  - id: S02
+    name: "Tapadora"
+    rate_upm: 90.0
+    cycle_time_std: 0.04
+    cycle_time_lsl: 0.61
+    cycle_time_usl: 0.73
+    mtbf_min: 150.0
+    mttr_min: 5.0
+    quality_rate: 0.997
+  - id: S03
+    name: "Etiquetadora"
+    rate_upm: 110.0
+    cycle_time_std: 0.03
+    cycle_time_lsl: 0.50
+    cycle_time_usl: 0.58
+    mtbf_min: 200.0
+    mttr_min: 4.0
+    quality_rate: 0.999
+  - id: S04
+    name: "Encajonadora"
+    rate_upm: 80.0
+    cycle_time_std: 0.06
+    cycle_time_lsl: 0.68
+    cycle_time_usl: 0.84
+    mtbf_min: 100.0
+    mttr_min: 10.0
+    quality_rate: 0.995
+
+buffers:
+  capacity: 50                  # espacio entre máquinas (unidades)
+
+simulation:
+  warmup_min: 30                # minutos de calentamiento
+  duration_min: 480             # 8 horas
+  replications: 30              # repeticiones Monte Carlo
+  random_seed: 42               # semilla para reproducibilidad
