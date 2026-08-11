@@ -2,9 +2,9 @@
 """CLI principal del simulador de línea de producción."""
 import argparse
 import os
-import numpy as np
 from src.config_loader import load_config
 from src.simulator import monte_carlo_simulation
+from src.oee import compute_replication_oee
 from src.reporter import generate_dashboard, generate_summary_png, generate_excel_report
 from rich.console import Console
 
@@ -38,21 +38,7 @@ def main():
     )
 
     # Calcular OEE post-simulación
-    for rep in results:
-        for m in rep.station_metrics:
-            cfg = next(s for s in stations if s.id == m.station_id)
-            nominal = cfg.nominal_cycle_time
-            total = m.total_time
-            downtime = m.downtime
-            avail_time = total - downtime
-            m.availability = avail_time / total if total > 0 else 0
-            max_possible = avail_time / nominal if nominal > 0 else 0
-            m.performance = (m.units_produced / max_possible) if max_possible > 0 else 0
-            m.quality = m.good_units / m.units_produced if m.units_produced > 0 else 0
-            m.oee = m.availability * m.performance * m.quality
-            m.utilization = m.working_time / total if total > 0 else 0
-            m.throughput = m.good_units / total if total > 0 else 0
-        rep.overall_oee = np.mean([m.oee for m in rep.station_metrics])
+    compute_replication_oee(results, stations)
 
     console.print("[bold green]Simulación completada.[/bold green]")
 
