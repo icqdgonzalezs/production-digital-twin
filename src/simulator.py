@@ -23,8 +23,11 @@ def run_replication(env: simpy.Environment, stations_cfg: List[StationConfig],
         station = _Station(env, cfg, buffers[i], buffers[i+1], collectors[i], warmup, duration)
         env.process(station.run())
 
-    # Fuente infinita de unidades
+    # Fuente infinita de unidades (alimenta la primera estación)
     env.process(_source(env, buffers[0]))
+
+    # Sumidero (consume el producto terminado, evita que la última estación se bloquee)
+    env.process(_sink(env, buffers[-1]))
 
     # Ejecutar
     env.run(until=warmup + duration)
@@ -171,7 +174,14 @@ class _Station:
         yield self.env.timeout(cycle_time)
 
 def _source(env, buffer):
+    """Fuente infinita: alimenta la primera estación con materia prima."""
     i = 0
     while True:
         yield buffer.put(f'unit_{i}')
         i += 1
+
+def _sink(env, buffer):
+    """Sumidero: retira el producto terminado del último buffer,
+    evitando que la última estación se bloquee esperando espacio."""
+    while True:
+        yield buffer.get()
