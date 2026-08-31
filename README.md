@@ -1,20 +1,20 @@
 <p align="left">
-  <a href="https://github.com/icqdgonzalezs/gemelo-digital-produccion">
-    <img src="https://raw.githubusercontent.com/icqdgonzalezs/gemelo-digital-produccion/main/capturas/banner_dgonzalez.png" alt="David González - Ingeniero Civil Químico | Gemelo Digital de Producción" width="100%"/>
+  <a href="https://github.com/icqdgonzalezs/production-digital-twin">
+    <img src="https://raw.githubusercontent.com/icqdgonzalezs/production-digital-twin/main/capturas/banner_dgonzalez.png" alt="David González - Ingeniero Civil Químico | production-digital-twin" width="100%"/>
   </a>
 </p>
 
-<h1 align="left">🏭 Gemelo Digital de Producción</h1>
-<h3 align="left">Simulación de eventos discretos para líneas de envasado industrial</h3>
+<h1 align="left">🏭 Production Digital Twin</h1>
+<h3 align="left">Gemelo Digital de Producción · Simulación de eventos discretos para líneas de envasado industrial</h3>
 
 <p align="left">
-  <a href="https://github.com/icqdgonzalezs/gemelo-digital-produccion/actions"><img src="https://img.shields.io/github/actions/workflow/status/icqdgonzalezs/gemelo-digital-produccion/ci.yml?label=CI&logo=github&style=flat-square" alt="CI"></a>
+  <a href="https://github.com/icqdgonzalezs/production-digital-twin/actions"><img src="https://img.shields.io/github/actions/workflow/status/icqdgonzalezs/production-digital-twin/ci.yml?label=CI&logo=github&style=flat-square" alt="CI"></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.9%2B-blue?style=flat-square&logo=python&logoColor=white" alt="Python"></a>
   <a href="https://simpy.readthedocs.io/"><img src="https://img.shields.io/badge/SimPy-4.1-red?style=flat-square&logo=python" alt="SimPy"></a>
   <a href="https://plotly.com/"><img src="https://img.shields.io/badge/Plotly-Dashboard-3F4F75?style=flat-square&logo=plotly&logoColor=white" alt="Plotly"></a>
   <a href="https://pytest.org/"><img src="https://img.shields.io/badge/tests-20%2B-brightgreen?style=flat-square&logo=pytest" alt="Tests"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="License"></a>
-  <img src="https://img.shields.io/github/last-commit/icqdgonzalezs/gemelo-digital-produccion?style=flat-square&logo=git" alt="Last Commit">
+  <img src="https://img.shields.io/github/last-commit/icqdgonzalezs/production-digital-twin?style=flat-square&logo=git" alt="Last Commit">
 </p>
 
 <p align="left">
@@ -25,19 +25,20 @@
 
 ## 📑 Tabla de contenidos
 
-- [Contexto del portafolio](#-contexto-del-portafolio)
-- [Problema de negocio](#-problema-de-negocio)
-- [Solución](#-solución)
-- [Características principales](#-características-principales)
-- [KPIs y métricas](#-kpis-y-métricas)
-- [Casos de uso](#-casos-de-uso)
-- [Arquitectura](#-arquitectura)
-- [Stack tecnológico](#-stack-tecnológico)
-- [Instalación y ejecución](#-instalación-y-ejecución)
-- [Configuración de línea](#-configuración-de-línea)
-- [Estructura del proyecto](#-estructura-del-proyecto)
-- [Roadmap](#-roadmap)
-- [Autor](#-autor)
+- [Contexto del portafolio](#contexto-del-portafolio)
+- [Problema de negocio](#problema-de-negocio)
+- [Solución](#solución)
+- [Características principales](#características-principales)
+- [KPIs y métricas](#kpis-y-métricas)
+- [Casos de uso](#casos-de-uso)
+- [Capturas del panel](#capturas-del-panel)
+- [Arquitectura](#arquitectura)
+- [Stack tecnológico](#stack-tecnológico)
+- [Instalación y ejecución](#instalación-y-ejecución)
+- [Configuración de línea](#configuración-de-línea)
+- [Estructura del proyecto](#estructura-del-proyecto)
+- [Roadmap](#roadmap)
+- [Autor](#autor)
 
 ---
 
@@ -46,28 +47,28 @@
 Este repositorio es el **Proyecto 02 — SIMULATE** dentro de mi ecosistema profesional **Industrial Operations Intelligence**:
 
 ```text
-              INDUSTRIAL OPERATIONS INTELLIGENCE
-                           │
-                           ▼
-                    INDUSTRIAL DATA
-                           │
-          ┌────────────────┼────────────────
-          ▼                ▼                ▼
-       ANALYZE          SIMULATE         MONITOR
-          │                │                │
-          └────────────────┼────────────────┘
-                           ▼
-                        PREDICT
-                           │
-                           ▼
-                       OPTIMIZE
-                           │
-                           ▼
-                        DECIDE
+                INDUSTRIAL OPERATIONS INTELLIGENCE
+                                 │
+                                 ▼
+                          INDUSTRIAL DATA
+                                 │
+                ┌────────────────────────────────┐
+                ▼                ▼                ▼
+             ANALYZE          SIMULATE          MONITOR
+                │                │                │
+                └────────────────┼────────────────┘
+                                 ▼
+                              PREDICT
+                                 │
+                                 ▼
+                             OPTIMIZE
+                                 │
+                                 ▼
+                              DECIDE
 ```
 
 - 📊 **Proyecto 01** → *Inteligencia de KPI industriales* (¿Qué está ocurriendo?)
-- 🏭 **Proyecto 02** → *Gemelo digital de producción* (¿Qué podría ocurrir?) ← **este repositorio**
+- 🏭 **Proyecto 02** → *Production Digital Twin* (¿Qué podría ocurrir?) ← **este repositorio**
 - 🔧 **Proyecto 03** → *Mantenimiento predictivo* (¿Qué podría fallar?)
 - ⚙️ **Proyecto 04** → *Optimizador de procesos* (¿Cuál es la mejor alternativa?)
 - 🤖 **Proyecto 05** → *Copiloto de IA industrial* (¿Qué debería decidir?)
@@ -151,40 +152,35 @@ Se varía el tamaño del buffer y se analiza el impacto en WIP y throughput.
 
 ---
 
+## 📸 Capturas del panel
+
+**Dashboard interactivo (HTML)**
+
+![Dashboard OEE](capturas/dashboard_preview.png)
+
+**Resumen ejecutivo (PNG)**
+
+![Summary PNG](capturas/summary_preview.png)
+
+---
+
 ## 🏗️ Arquitectura
 
 ```text
-┌──────────────────────────────────────────────────────────────┐
-│                      CLI (main.py)                            │
-│                    --replications --config                    │
-└────────────────────┬─────────────────────────────────────────┘
-                     │
-                     ▼
-┌──────────────────────────────────────────────────────────────┐
-│              config_loader.py  (PyYAML)                       │
-│     Lee line_config.yaml → objetos StationConfig              │
-└────────────────────┬─────────────────────────────────────────┘
-                     │
-                     ▼
-┌──────────────────────────────────────────────────────────────┐
-│              simulator.py  (SimPy + Monte Carlo)              │
-│  ┌────────────┐  ┌────────────┐  ┌────────────┐              │
-│  │ Estación 1 │→ │ Estación 2 │→ │ Estación N │              │
-│  │ (buffer)   │  │ (buffer)   │  │ (buffer)   │              │
-│  └────────────┘  └────────────┘  └────────────┘              │
-└────────────────────┬─────────────────────────────────────────┘
-                     │
-                     ▼
-┌──────────────────────────────────────────────────────────────┐
-│       oee.py    +    bottleneck.py    +    models.py          │
-│  Cálculo OEE, Cp/Cpk, MTBF/MTTR, detección de cuellos        │
-└────────────────────┬─────────────────────────────────────────┘
-                     │
-                     ▼
-┌──────────────────────────────────────────────────────────────┐
-│                reporter.py  (Plotly + OpenPyXL)               │
-│   Dashboard HTML  ·  Summary PNG  ·  Reporte Excel XLSX       │
-└──────────────────────────────────────────────────────────────┘
+main.py  (CLI con rich)
+   │   --replications --config --seed
+   ▼
+config_loader.py
+   │   line_config.yaml → objetos StationConfig validados
+   ▼
+simulator.py  (SimPy + Monte Carlo)
+   │   Estación 1 → Estación 2 → … → Estación N  (buffers finitos, MTBF/MTTR)
+   ▼
+oee.py · bottleneck.py · models.py
+   │   OEE (ISO 22400) · Cp/Cpk · MTBF/MTTR · score de cuellos de botella
+   ▼
+reporter.py  (Plotly + Matplotlib + OpenPyXL)
+   └─►  dashboard.html · summary.png · report.xlsx
 ```
 
 ---
@@ -211,8 +207,8 @@ Se varía el tamaño del buffer y se analiza el impacto en WIP y throughput.
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/icqdgonzalezs/gemelo-digital-produccion.git
-cd gemelo-digital-produccion
+git clone https://github.com/icqdgonzalezs/production-digital-twin.git
+cd production-digital-twin
 
 # 2. Crear entorno virtual
 python3 -m venv venv
@@ -284,7 +280,7 @@ simulation:
 ## 📁 Estructura del proyecto
 
 ```text
-gemelo-digital-produccion/
+production-digital-twin/
 ├── config/
 │   └── line_config.yaml           # Parámetros editables
 ├── data/                          # Datos de entrada (opcional)
@@ -337,7 +333,7 @@ Distribuido bajo la licencia MIT. Ver [`LICENSE`](LICENSE) para más informació
 ## 👤 Autor
 
 <p align="left">
-  <img src="https://raw.githubusercontent.com/icqdgonzalezs/gemelo-digital-produccion/main/capturas/DGonzalez_professional.png" alt="David González" width="180" style="border-radius: 50%;"/>
+  <img src="https://raw.githubusercontent.com/icqdgonzalezs/production-digital-twin/main/capturas/DGonzalez_professional.png" alt="David González" width="180"/>
 </p>
 
 <p align="left">
