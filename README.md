@@ -1,11 +1,13 @@
-<p align="center">
-  <img src="capturas/banner_dgonzalez.png" alt="David González - Ingeniero Civil Químico | Gemelo Digital de Producción" width="100%"/>
+<p align="left">
+  <a href="https://github.com/icqdgonzalezs/gemelo-digital-produccion">
+    <img src="https://raw.githubusercontent.com/icqdgonzalezs/gemelo-digital-produccion/main/capturas/banner_dgonzalez.png" alt="David González - Ingeniero Civil Químico | Gemelo Digital de Producción" width="100%"/>
+  </a>
 </p>
 
-<h1 align="center">🏭 Gemelo Digital de Producción</h1>
-<h3 align="center">Simulación de eventos discretos para líneas de envasado industrial</h3>
+<h1 align="left">🏭 Gemelo Digital de Producción</h1>
+<h3 align="left">Simulación de eventos discretos para líneas de envasado industrial</h3>
 
-<p align="center">
+<p align="left">
   <a href="https://github.com/icqdgonzalezs/gemelo-digital-produccion/actions"><img src="https://img.shields.io/github/actions/workflow/status/icqdgonzalezs/gemelo-digital-produccion/ci.yml?label=CI&logo=github&style=flat-square" alt="CI"></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.9%2B-blue?style=flat-square&logo=python&logoColor=white" alt="Python"></a>
   <a href="https://simpy.readthedocs.io/"><img src="https://img.shields.io/badge/SimPy-4.1-red?style=flat-square&logo=python" alt="SimPy"></a>
@@ -15,7 +17,7 @@
   <img src="https://img.shields.io/github/last-commit/icqdgonzalezs/gemelo-digital-produccion?style=flat-square&logo=git" alt="Last Commit">
 </p>
 
-<p align="center">
+<p align="left">
   <i>💡 "Simular antes de invertir: reducir riesgos, identificar cuellos de botella y predecir OEE antes de tocar una sola máquina en planta."</i>
 </p>
 
@@ -43,13 +45,13 @@
 
 Este repositorio es el **Proyecto 02 — SIMULATE** dentro de mi ecosistema profesional **Industrial Operations Intelligence**:
 
-```
+```text
               INDUSTRIAL OPERATIONS INTELLIGENCE
                            │
                            ▼
                     INDUSTRIAL DATA
                            │
-          ┌────────────────┼────────────────┐
+          ┌────────────────┼────────────────
           ▼                ▼                ▼
        ANALYZE          SIMULATE         MONITOR
           │                │                │
@@ -151,7 +153,7 @@ Se varía el tamaño del buffer y se analiza el impacto en WIP y throughput.
 
 ## 🏗️ Arquitectura
 
-```
+```text
 ┌──────────────────────────────────────────────────────────────┐
 │                      CLI (main.py)                            │
 │                    --replications --config                    │
@@ -281,7 +283,7 @@ simulation:
 
 ## 📁 Estructura del proyecto
 
-```
+```text
 gemelo-digital-produccion/
 ├── config/
 │   └── line_config.yaml           # Parámetros editables
@@ -334,16 +336,16 @@ Distribuido bajo la licencia MIT. Ver [`LICENSE`](LICENSE) para más informació
 
 ## 👤 Autor
 
-<p align="center">
-  <img src="capturas/DGonzalez_professional.png" alt="David González" width="180" style="border-radius: 50%;"/>
+<p align="left">
+  <img src="https://raw.githubusercontent.com/icqdgonzalezs/gemelo-digital-produccion/main/capturas/DGonzalez_professional.png" alt="David González" width="180" style="border-radius: 50%;"/>
 </p>
 
-<p align="center">
+<p align="left">
   <strong>David González</strong><br/>
   <em>Ingeniero Civil Químico · Data Analytics · Mejora Continua</em>
 </p>
 
-<p align="center">
+<p align="left">
   <a href="https://linkedin.com/in/davidgonzalezsz"><img src="https://img.shields.io/badge/LinkedIn-David_González-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
   <a href="https://github.com/icqdgonzalezs"><img src="https://img.shields.io/badge/GitHub-icqdgonzalezs-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"></a>
   <a href="mailto:icq.dgonzalezs@gmail.com"><img src="https://img.shields.io/badge/Email-icq.dgonzalezs%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
@@ -351,7 +353,7 @@ Distribuido bajo la licencia MIT. Ver [`LICENSE`](LICENSE) para más informació
 
 ---
 
-<p align="center">
+<p align="left">
   <i>🏭 Parte del portafolio <strong>Industrial Operations Intelligence</strong><br/>
   Analizar → Simular → Predecir → Optimizar → Decidir</i>
 </p>
