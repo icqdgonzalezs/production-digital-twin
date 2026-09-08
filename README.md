@@ -1,8 +1,3 @@
-<p align="left">
-  <a href="https://github.com/icqdgonzalezs/production-digital-twin">
-    <img src="https://raw.githubusercontent.com/icqdgonzalezs/production-digital-twin/main/capturas/banner_dgonzalez.png" alt="David González - Ingeniero Civil Químico | production-digital-twin" width="100%"/>
-  </a>
-</p>
 
 <h1 align="left">🏭 Production Digital Twin</h1>
 <h3 align="left">Gemelo Digital de Producción · Simulación de eventos discretos para líneas de envasado industrial</h3>
